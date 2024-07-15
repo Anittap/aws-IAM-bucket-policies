@@ -181,3 +181,44 @@ aws s3 cp newfile.txt s3://blue.anitta.cloud --profile=red
     ]
 }
 ```
+#### Remote Bucket Details
+```
+Bucket Name : s3website.trainingdevops.cloud  
+
+Bucket Policy :
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::082897113543:user/red"
+            },
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::s3website.trainingdevops.cloud",
+                "arn:aws:s3:::s3website.trainingdevops.cloud/*"
+            ]
+        }
+    ]
+}
+```
+#### Local Iam User Policy
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::s3website.trainingdevops.cloud",
+                "arn:aws:s3:::s3website.trainingdevops.cloud/*"
+            ]
+        }
+    ]
+}
+```
