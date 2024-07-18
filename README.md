@@ -181,6 +181,26 @@ aws s3 cp newfile.txt s3://blue.anitta.cloud --profile=red
     ]
 }
 ```
+#### Make versions public as well
+```
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Principal": "*",
+			"Action": [
+			          "s3:GetObject",
+			          "s3:GetObjectVersion"
+			          ],
+			"Resource": [
+				"arn:aws:s3:::version.anitta.cloud/*",
+				"arn:aws:s3:::version.anitta.cloud"
+			]
+		}
+	]
+}
+```
 #### Remote Bucket Details
 ```
 Bucket Name : s3website.trainingdevops.cloud  
